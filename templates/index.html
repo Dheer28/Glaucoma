@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Glaucoma Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Glaucoma Detector</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Upload Fundus Image:</label><br>
+        <input type="file" id="file" name="file" accept="image/*" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction:</h2>
+        <p>{{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
